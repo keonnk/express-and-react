@@ -1,0 +1,14 @@
+{
+  "name": "react-serve-from-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd ./fe && npm run build && cd ../be && npm run build",
+    "start": "cd ./be && npm run start",
+    "dev": "cd ./fe && npm run build && cd ../be && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
