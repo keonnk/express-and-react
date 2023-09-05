@@ -3,9 +3,13 @@ import process from 'node:process'
 
 if(process.argv[2] == '-w' || process.argv[2] == '--watch') {
     let ctx = await esbuild.context({
-        entryPoints: ['./src/app.jsx'],
+        entryPoints: ['./src/app.tsx'],
         bundle: true,
-        outfile: './dist/out.js'
+        loader: {
+            '.tsx': 'tsx',
+            '.ts': 'ts',
+        },
+        outfile: './public/dist/out.js'
     })
 
     console.log('esbuild watching for changes...')
@@ -13,8 +17,12 @@ if(process.argv[2] == '-w' || process.argv[2] == '--watch') {
 }
 else {
     await esbuild.build({
-        entryPoints: ['./src/app.jsx'],
+        entryPoints: ['./src/app.tsx'],
         bundle: true,
-        outfile: './dist/out.js'
+        loader: {
+            '.tsx': 'tsx',
+            '.ts': 'ts',
+        },
+        outfile: './public/dist/out.js'
     })
 }

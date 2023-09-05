@@ -6,9 +6,12 @@
   "scripts": {
     "build": "cd ./fe && npm run build && cd ../be && npm run build",
     "start": "cd ./be && npm run start",
-    "dev": "cd ./fe && npm run build && cd ../be && npm run dev"
+    "dev": "concurrently \"cd ./fe && npm run dev\" \"cd ./be && npm run dev\" "
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.1"
+  }
 }

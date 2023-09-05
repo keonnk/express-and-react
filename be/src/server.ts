@@ -2,10 +2,10 @@ import express from 'express'
 
 const app = express()
 
-app.use(express.static('../fe/dist'));
+app.use(express.static('../fe/public'));
 
 app.get('*', (req, res) => {
-    res.sendFile('index.html', {root: '../fe/dist'})
+    res.sendFile('index.html', {root: '../fe/public'})
 })
 
 app.listen(3000, () => {

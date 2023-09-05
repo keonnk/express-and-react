@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node build.mjs",
-    "dev": "node build.mjs -w"
+    "build": "tsc --noEmit --preserveWatchOutput && node build.mjs",
+    "dev": "concurrently \"tsc -w --noEmit --preserveWatchOutput\" \"node build.mjs -w\" "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^8.2.1",
     "esbuild": "^0.19.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
