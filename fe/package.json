@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --noEmit --preserveWatchOutput && node build.mjs",
+    "build": "npm i && tsc --noEmit --preserveWatchOutput && node build.mjs",
     "dev": "concurrently \"tsc -w --noEmit --preserveWatchOutput\" \"node build.mjs -w\" "
   },
   "keywords": [],
