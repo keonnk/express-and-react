@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm i && tsc -w --preserveWatchOutput",
-    "start": "node --watch ./dist/server.js",
-    "dev": " concurrently \"npm run build\" \"npm run start\" "
+    "build": "npm i && tsc --preserveWatchOutput",
+    "start": "node ./dist/server.js",
+    "build-watch": "tsc -w --preserveWatchOutput",
+    "start-watch": "node --watch ./dist/server.js",
+    "dev": " concurrently \"npm run build-watch\" \"npm run start-watch\" "
   },
   "author": "",
   "license": "ISC",
